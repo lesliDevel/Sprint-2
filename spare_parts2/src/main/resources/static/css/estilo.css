@@ -1,0 +1,22 @@
+@charset "utf-8";  
+
+body{  
+	width: 900px;
+	margin: 35px auto;
+	padding: 10px;
+}
+
+.tableFormato{  
+	width:400px;
+	margin:20px auto;
+	padding:10px;
+	text-align: center;
+	
+	
+	
+}
+
+th, td{
+	border : 1px solid black; 
+	
+}

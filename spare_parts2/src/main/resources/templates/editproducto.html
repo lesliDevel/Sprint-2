@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"  >
+<head>
+<meta charset="UTF-8">
+<title>SPARE - Editar producto</title>
+</head>
+<body>
+
+	<form name="editarproducto" method="POST" th:action="@{/saveproducto}"
+		th:object="${productos}">
+		<table>
+			<tr>
+				<td>Codigo producto:</td>
+				<td><input type="text" name="cod_producto" id="cod_producto" required
+				 	th:value="*{cod_producto}"></td> 
+			</tr>
+			<tr>
+				<td>Nombre producto:</td>
+				<td><input type="text" name="nombre_producto" id="nombre_producto" required 
+				    th:value="*{nombre_producto}"></td>
+			</tr>
+			
+			<tr>
+				<td>Valor unitario:</td>
+				<td><input type="text" name="valor_producto" id="valor_producto" required 
+					th:value="*{valor_producto}"></td>
+			</tr>
+			
+			<tr>
+				<td></td>
+				<td> <input type = "hidden" name = "id_producto" id = "id_producto" 
+					th:value="*{id_producto}"></td>
+			
+			
+			</tr>
+			
+			
+			
+			<tr> 
+			
+				<td></td>
+				<td><input type="submit" value="Edita curso"></td>
+			</tr>
+		</table>
+
+
+	</form>
+	
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="UTF-8">
+
+<link rel="stylesheet" type="text/css" th:href="@{/css/estilo.css}">
+
+
+<title>ISP-Inventario Spare Parts</title>
+</head>
+<body>
+
+	<div>
+	
+	<center>
+			<a th:href = "@{/nuevoproducto}"    >Agregar producto nuevo</a>  
+		</center> 
+
+		<table  class= "tableFormato" >
+
+			<thead>
+
+				<tr>
+					<th>Id_producto</th>
+					<th>Codigo producto</th>
+					<th>Nombre</th>
+					<th>Valor unitario</th>
+				</tr>
+			</thead>
+
+			<tbody>
+			<tbody th:each="producto:${productos}">
+				<tr>
+					
+				
+					<td><font th:text="${producto.id_producto}"></font></td>
+					<td><font th:text="${producto.cod_producto}"></font></td>
+					<td><font th:text="${producto.nombre_producto}"></font></td>
+					<td><font th:text="${producto.valor_producto}"></font></td>
+					<td>
+					<a  th:href = "@{/editarproducto/} + ${producto.id_producto}"   >Editar</a> |
+					<a th:href = "@{/eliminarproducto/} + ${producto.id_producto}">Eliminar</a>
+					
+				   </td>
+
+				</tr>
+
+
+
+
+			</tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+
+		</table>
+
+
+
+
+	</div>
+
+</body>
+</html>
