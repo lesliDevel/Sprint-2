@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 
 <link rel="stylesheet" type="text/css" th:href="@{/css/estilo.css}">
-
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
 <title>ISP-Inventario Spare Parts</title>
 </head>
@@ -16,18 +16,19 @@
 	<div>
 	
 	<center>
-			<a th:href = "@{/nuevoproducto}"    >Agregar producto nuevo</a>  
-		</center> 
+			<a th:href = "@{/nuevoproducto}"   class="btn btn-success" >Agregar producto nuevo</a>  
+		</center> <br> <br>
 
-		<table  class= "tableFormato" >
+		<table  class= "tableFormato container-fluid table  table-striped" style="border-radius:20px;" >
 
-			<thead>
+			<thead class="bg-info">
 
-				<tr>
-					<th>Id_producto</th>
+				<tr >
+					<th style="width: 20px">Id_producto</th>
 					<th>Codigo producto</th>
 					<th>Nombre</th>
 					<th>Valor unitario</th>
+					<th>Operaciones</th>
 				</tr>
 			</thead>
 
@@ -41,8 +42,8 @@
 					<td><font th:text="${producto.nombre_producto}"></font></td>
 					<td><font th:text="${producto.valor_producto}"></font></td>
 					<td>
-					<a  th:href = "@{/editarproducto/} + ${producto.id_producto}"   >Editar</a> |
-					<a th:href = "@{/eliminarproducto/} + ${producto.id_producto}">Eliminar</a>
+					<a  th:href = "@{/editarproducto/} + ${producto.id_producto}" class="btn btn-success"   >Editar</a> |
+					<a th:href = "@{/eliminarproducto/} + ${producto.id_producto}" class="btn btn-danger"  >Eliminar<
 					
 				   </td>
 
